@@ -46,7 +46,7 @@ extension SwiftUI.Image {
 /// A Kingfisher compatible SwiftUI `View` to load an image from a `Source`.
 /// Declaring a `KFImage` in a `View`'s body to trigger loading from the given `Source`.
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
-public struct KFImage: SwiftUI.View {
+public struct KFImage: SwiftUI.KFView {
 
     /// An image binder that manages loading and cancelling image related task.
     @ObservedObject public private(set) var binder: ImageBinder
@@ -85,7 +85,7 @@ public struct KFImage: SwiftUI.View {
     }
 
     /// Declares the content and behavior of this view.
-    public var body: some SwiftUI.View {
+    public var body: some SwiftUI.KFView {
         Group {
             if binder.image != nil {
                 configurations
@@ -152,7 +152,7 @@ extension KFImage {
     /// Sets a placeholder `View` which shows when loading the image.
     /// - Parameter content: A view that describes the placeholder.
     /// - Returns: A `KFImage` view that contains `content` as its placeholder.
-    public func placeholder<Content: SwiftUI.View>(@ViewBuilder _ content: () -> Content) -> KFImage {
+    public func placeholder<Content: SwiftUI.KFView>(@ViewBuilder _ content: () -> Content) -> KFImage {
         let v = content()
         var result = self
         result.placeholder = AnyView(v)
@@ -203,7 +203,7 @@ extension KFImage {
 #if DEBUG
 @available(iOS 13.0, OSX 10.15, tvOS 13.0, watchOS 6.0, *)
 struct KFImage_Previews : PreviewProvider {
-    static var previews: some SwiftUI.View {
+    static var previews: some SwiftUI.KFView {
         Group {
             KFImage(URL(string: "https://raw.githubusercontent.com/onevcat/Kingfisher/master/images/logo.png")!)
                 .onSuccess { r in

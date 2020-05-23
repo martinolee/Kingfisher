@@ -91,7 +91,7 @@ struct SwiftUIList : View {
 
 #if DEBUG
 struct SwiftUIList_Previews : PreviewProvider {
-    static var previews: some View {
+    static var previews: some KFView {
         SwiftUIList()
     }
 }

@@ -50,7 +50,7 @@ struct MainView: View {
 
 #if DEBUG
 struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
+    static var previews: some KFView {
         MainView()
     }
 }

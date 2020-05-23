@@ -658,7 +658,7 @@ public struct DefaultImageModifier: ImageModifier {
 @available(*, deprecated, message: "Use `KFCrossPlatformImage` instead.")
 public typealias Image = KFCrossPlatformImage
 @available(*, deprecated, message: "Use `KFCrossPlatformView` instead.")
-public typealias View = KFCrossPlatformView
+public typealias KFView = KFCrossPlatformView
 @available(*, deprecated, message: "Use `KFCrossPlatformColor` instead.")
 public typealias Color = KFCrossPlatformColor
 @available(*, deprecated, message: "Use `KFCrossPlatformImageView` instead.")
@@ -674,7 +674,7 @@ public typealias Color = KFCrossPlatformColor
     @available(*, deprecated, message: "Use `KFCrossPlatformImageView` instead.")
     public typealias ImageView = KFCrossPlatformImageView
     @available(*, deprecated, message: "Use `KFCrossPlatformView` instead.")
-    public typealias View = KFCrossPlatformView
+    public typealias KFView = KFCrossPlatformView
     @available(*, deprecated, message: "Use `KFCrossPlatformButton` instead.")
     public typealias Button = KFCrossPlatformButton
     #endif
